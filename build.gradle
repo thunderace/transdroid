@@ -1,9 +1,11 @@
+apply from: 'dependencies.gradle'
+
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
@@ -13,5 +15,11 @@ allprojects {
         jcenter()
         mavenLocal()
         maven { url "https://jitpack.io" }
+    }
+    ext {
+        androidBuildToolsVersion = BUILD_VERSION_TOOLS
+        androidMinSdkVersion = Integer.parseInt(MIN_SDK)
+        androidTargetSdkVersion = Integer.parseInt(TARGET_SDK)
+        androidCompileSdkVersion =Integer.parseInt(COMPILE_SDK)
     }
 }

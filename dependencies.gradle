@@ -1,0 +1,14 @@
+ext {
+    //Libraries
+    appcompatV7         = 'com.android.support:appcompat-v7'
+    supportAnnotations  = 'com.android.support:support-annotations'
+    //Version Libraries
+    appcompatV7Version    = '25.3.1'
+    supportAnnotationsVersion = '25.3.1'
+    //Library
+    Dependencies = [
+            appcompatV7 : "${appcompatV7}:${appcompatV7Version}",
+            supportAnnotations : "${supportAnnotations}:${supportAnnotationsVersion}",
+    ]
+}
+
