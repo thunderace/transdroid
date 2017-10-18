@@ -17,12 +17,16 @@
  */
 package org.transdroid.daemon.Deluge;
 
+import android.util.Base64;
+
 import com.android.internalcopy.http.multipart.FilePart;
 import com.android.internalcopy.http.multipart.MultipartEntity;
 import com.android.internalcopy.http.multipart.Part;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.cookie.Cookie;
@@ -614,7 +618,11 @@ public class DelugeAdapter implements IDaemonAdapter {
 				settings.getUsername() != null && !settings.getUsername().equals(""));
 		httpclient.addRequestInterceptor(HttpHelper.gzipRequestInterceptor);
 		httpclient.addResponseInterceptor(HttpHelper.gzipResponseInterceptor);
-
+		if (!settings.getUsername().isEmpty() && !settings.getPassword().isEmpty()) {
+			httpclient.getCredentialsProvider().setCredentials(
+					AuthScope.ANY,
+					new UsernamePasswordCredentials(settings.getUsername(), settings.getPassword()));
+		}
 	}
 
 	/**
@@ -622,7 +630,7 @@ public class DelugeAdapter implements IDaemonAdapter {
 	 * @return The URL of the RPC API
 	 */
 	private String buildWebUIUrl() {
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() +
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() +
 				(settings.getFolder() == null ? "" : settings.getFolder());
 	}
 

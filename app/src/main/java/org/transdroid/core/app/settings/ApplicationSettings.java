@@ -188,7 +188,9 @@ public class ApplicationSettings {
 				prefs.getBoolean("server_alarmnew_" + order, false),
 				prefs.getString("server_alarmexclude_" + order, null),
 				prefs.getString("server_alarminclude_" + order, null),
-				false);
+				false,
+                prefs.getBoolean("use_default_server_port_" + order, true)
+                );
 		// @formatter:on
 	}
 
@@ -207,7 +209,8 @@ public class ApplicationSettings {
 		for (int i = order; i < max; i++) {
 			edit.putString("server_name_" + i, prefs.getString("server_name_" + (i + 1), null));
 			edit.putString("server_type_" + i, prefs.getString("server_type_" + (i + 1), null));
-			edit.putString("server_address_" + i, prefs.getString("server_address_" + (i + 1), null));
+            edit.putString("server_address_" + i, prefs.getString("server_address_" + (i + 1), null));
+            edit.putString("use_default_server_port_" + i, prefs.getString("use_default_server_port_" + (i + 1), null));
 			edit.putString("server_localaddress_" + i, prefs.getString("server_localaddress_" + (i + 1), null));
 			edit.putString("server_localnetwork_" + i, prefs.getString("server_localnetwork_" + (i + 1), null));
 			edit.putString("server_port_" + i, prefs.getString("server_port_" + (i + 1), null));
@@ -231,7 +234,8 @@ public class ApplicationSettings {
 		// Remove the last settings, of which we are now sure are no longer required
 		edit.remove("server_name_" + max);
 		edit.remove("server_type_" + max);
-		edit.remove("server_address_" + max);
+        edit.remove("server_address_" + max);
+        edit.remove("use_server_default_port_" + max);
 		edit.remove("server_localaddress_" + max);
 		edit.remove("server_localnetwork_" + max);
 		edit.remove("server_port_" + max);

@@ -290,7 +290,7 @@ public class Aria2Adapter implements IDaemonAdapter {
 
 			// Set POST URL and data
 			String url =
-					(settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() +
+					(settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() +
 							(settings.getFolder() == null ? "" : settings.getFolder()) + "/jsonrpc";
 			HttpPost httppost = new HttpPost(url);
 			httppost.setEntity(new StringEntity(data));

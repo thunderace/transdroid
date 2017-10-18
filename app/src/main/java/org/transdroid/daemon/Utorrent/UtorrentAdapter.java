@@ -446,7 +446,7 @@ public class UtorrentAdapter implements IDaemonAdapter {
 			// Strip trailing slash
 			folder = folder.substring(0, folder.length() - 1);
 		}
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress().trim() + ":" + settings.getPort() + folder + "/gui/";
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress().trim() + settings.getPortString() + folder + "/gui/";
 	}
 
 	private TorrentStatus convertUtorrentStatus(int uStatus, boolean finished) {

@@ -70,6 +70,7 @@ public class XirvikSemiSettings extends SeedboxSettingsImpl implements SeedboxSe
 				prefs.getBoolean("seedbox_xirviksemi_alarmnew_" + order, false),
 				prefs.getString("seedbox_xirviksemi_alarmexclude_" + order, null),
 				prefs.getString("seedbox_xirviksemi_alarminclude_" + order, null),
+				true,
 				true);
 		// @formatter:on
 	}

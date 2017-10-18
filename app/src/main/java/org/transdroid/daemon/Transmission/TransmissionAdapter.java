@@ -492,7 +492,7 @@ public class TransmissionAdapter implements IDaemonAdapter {
 				folder = folder.substring(0, folder.length() - 1);
 			}
 		}
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() +
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() +
 				folder + "/rpc";
 	}
 

@@ -474,7 +474,7 @@ public class KtorrentAdapter implements IDaemonAdapter {
 	 * @return The base URL of for a request, i.e. http://localhost:8080
 	 */
 	private String buildWebUIUrl() {
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort();
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString();
 	}
 
 	@Override

@@ -31,6 +31,10 @@
 		android:key="server_address"
 		android:title="@string/pref_address"
 		android:inputType="textUri" />
+	<CheckBoxPreference
+		android:key="use_default_server_port"
+		android:title="@string/pref_use_default_port"
+		android:defaultValue="false"/>
 	<EditTextPreference
 		android:key="server_user"
 		android:title="@string/pref_user"

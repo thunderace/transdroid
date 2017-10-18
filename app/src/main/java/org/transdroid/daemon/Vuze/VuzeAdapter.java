@@ -344,7 +344,7 @@ public class VuzeAdapter implements IDaemonAdapter {
 	 * @return The URL of the RPC API
 	 */
 	private String buildWebUIUrl() {
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() + RPC_URL;
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() + RPC_URL;
 	}
 
 	@SuppressWarnings("unchecked")

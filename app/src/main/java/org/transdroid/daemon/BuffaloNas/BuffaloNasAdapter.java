@@ -258,7 +258,7 @@ public class BuffaloNasAdapter implements IDaemonAdapter {
 	 * @return The URL to request
 	 */
 	private String buildWebUIUrl(String path) {
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() + path;
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() + path;
 	}
 
 	private ArrayList<Torrent> parseJsonTorrents(JSONObject response) throws JSONException {

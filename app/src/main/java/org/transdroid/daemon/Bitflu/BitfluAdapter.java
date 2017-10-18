@@ -284,7 +284,7 @@ public class BitfluAdapter implements IDaemonAdapter {
 		if (settings.getFolder() != null) {
 			webuiroot = settings.getFolder();
 		}
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() +
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() +
 				webuiroot + "/";
 	}
 

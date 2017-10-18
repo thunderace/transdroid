@@ -273,7 +273,7 @@ public class Tfb4rtAdapter implements IDaemonAdapter {
 			if (folder.endsWith("/"))
 				folder = folder.substring(0, folder.length() - 1);
 		}
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() + folder
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() + folder
 				+ act + RPC_URL_USER + settings.getUsername() + RPC_URL_PASS
 				+ md5Pass((settings.getPassword() == null ? "" : settings.getPassword()));
 	}

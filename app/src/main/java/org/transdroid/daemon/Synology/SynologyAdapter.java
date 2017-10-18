@@ -478,7 +478,7 @@ public class SynologyAdapter implements IDaemonAdapter {
 		}
 
 		private String buildURL(String params) {
-			return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() +
+			return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() +
 					"/webapi/" + path + "?api=" + api + "&version=" + version + params;
 		}
 

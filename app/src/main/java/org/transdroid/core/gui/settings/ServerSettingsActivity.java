@@ -59,6 +59,7 @@ public class ServerSettingsActivity extends KeyBoundPreferencesActivity {
 		initTextPreference("server_name");
 		initListPreference("server_type");
 		initTextPreference("server_address");
+        initBooleanPreference("use_default_server_port", true);
 		initTextPreference("server_port");
 		initTextPreference("server_user");
 		initTextPreference("server_pass");

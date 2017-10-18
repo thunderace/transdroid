@@ -250,8 +250,9 @@
 	<string name="pref_alarmrssexclude_info">Don\'t show torrents whose name matches these |-separated words</string>
 	<string name="pref_alarmrssinclude">Include filter</string>
 	<string name="pref_alarmrssinclude_info">Only show torrents whose name matches these |-separated words</string>
-	
+
 	<string name="pref_servertype">Server type</string>
+	<string name="pref_use_default_port">Use default port</string>
 	<string name="pref_address">IP or host name</string>
 	<string name="pref_port">Port number</string>
 	<string name="pref_user">User name</string>

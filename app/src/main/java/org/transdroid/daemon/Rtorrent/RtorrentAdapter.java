@@ -374,7 +374,7 @@ public class RtorrentAdapter implements IDaemonAdapter {
 	private String buildWebUIUrl() {
 		String address = settings.getAddress() == null ? "" : settings.getAddress().trim();
 		String folder = settings.getFolder() == null ? "" : settings.getFolder().trim();
-		return (settings.getSsl() ? "https://" : "http://") + address + ":" + settings.getPort() +
+		return (settings.getSsl() ? "https://" : "http://") + address + settings.getPortString() +
 				(TextUtils.isEmpty(folder) ? DEFAULT_RPC_URL : folder);
 	}
 

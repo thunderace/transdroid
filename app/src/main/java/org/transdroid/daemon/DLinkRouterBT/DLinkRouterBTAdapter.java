@@ -311,7 +311,7 @@ public class DLinkRouterBTAdapter implements IDaemonAdapter {
 	 * @return The URL of the RPC API
 	 */
 	private String buildWebUIUrl() {
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() +
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() +
 				PATH_TO_API;
 	}
 

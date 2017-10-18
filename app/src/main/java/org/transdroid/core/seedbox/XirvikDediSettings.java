@@ -71,6 +71,7 @@ public class XirvikDediSettings extends SeedboxSettingsImpl implements SeedboxSe
 				prefs.getBoolean("seedbox_xirvikdedi_alarmnew_" + order, false),
 				prefs.getString("seedbox_xirvikdedi_alarmexclude_" + order, null),
 				prefs.getString("seedbox_xirvikdedi_alarminclude_" + order, null),
+				true,
 				true);
 		// @formatter:on
 	}

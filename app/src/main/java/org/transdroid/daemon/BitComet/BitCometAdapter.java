@@ -258,7 +258,7 @@ public class BitCometAdapter implements IDaemonAdapter {
 	 * @return The URL to request
 	 */
 	private String buildWebUIUrl(String path) {
-		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + ":" + settings.getPort() + path;
+		return (settings.getSsl() ? "https://" : "http://") + settings.getAddress() + settings.getPortString() + path;
 	}
 
 	private String makeRequest(Log log, String url, NameValuePair... params) throws DaemonException {

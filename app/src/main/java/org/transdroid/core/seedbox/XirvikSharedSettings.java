@@ -71,6 +71,7 @@ public class XirvikSharedSettings extends SeedboxSettingsImpl implements Seedbox
 				prefs.getBoolean("seedbox_xirvikshared_alarmnew_" + order, false),
 				prefs.getString("seedbox_xirvikshared_alarmexclude_" + order, null),
 				prefs.getString("seedbox_xirvikshared_alarminclude_" + order, null),
+				true,
 				true);
 		// @formatter:on
 	}
