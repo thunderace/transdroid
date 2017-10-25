@@ -19,6 +19,8 @@ package org.transdroid.daemon.Transmission;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -476,6 +478,11 @@ public class TransmissionAdapter implements IDaemonAdapter {
 	 */
 	private void initialise() throws DaemonException {
 		httpclient = HttpHelper.createStandardHttpClient(settings, true);
+		if (!settings.getUsername().isEmpty() && !settings.getPassword().isEmpty()) {
+			httpclient.getCredentialsProvider().setCredentials(
+					AuthScope.ANY,
+					new UsernamePasswordCredentials(settings.getUsername(), settings.getPassword()));
+		}
 	}
 
 	/**
